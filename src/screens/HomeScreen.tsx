@@ -12,7 +12,6 @@ const SelectionUI = () => {
     const removeData =()=> {
        localStorage.removeItem("initialData");
     }
-
     const data: [] = JSON.parse(localStorage.getItem("initialData")!);
 
     return (
