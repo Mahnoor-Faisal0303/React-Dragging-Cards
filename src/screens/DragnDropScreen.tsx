@@ -54,10 +54,15 @@ const DropDrag: FunctionComponent<Props> = (props) => {
   };
 
   const data = localStorage.getItem("initialData");
-
+  // if (data==null) {
+  //   const initialData = [];
+  //   initialData.push({ lg: cardPosition });
+  //   localStorage.setItem('initialData', JSON.stringify(initialData));
+  //   console.log("ndskj")
+  // }
 
   const savingLayout = () => {
-    if (!data) {
+     if (!data) {
       const initialData = [];
       initialData.push({ lg: cardPosition });
       localStorage.setItem('initialData', JSON.stringify(initialData));
