@@ -55,14 +55,23 @@ const DropDrag: FunctionComponent<Props> = (props) => {
 
   const data = localStorage.getItem("initialData");
 
+  if (data == null) {
+    console.log("data is null");
+    const initialData = [{
+      lg: [
+        { x: 0, y: 0, w: 5, h: 1.7, i: "0" },
+        { x: 10, y: 0, w: 4, h: 2.3, i: "1" },
+        { x: 5, y: 0, w: 3, h: 2.3, i: "2" },
+        { x: 0, y: 1, w: 4, h: 2, i: "3" },
+        { x: 10, y: 1, w: 3, h: 3, i: "4" },
+      ]
+    }];
+    console.log("initial DAta:", initialData);
+    localStorage.setItem('initialData', JSON.stringify(initialData));
+  }
 
   const savingLayout = () => {
-    if (!data) {
-      const initialData = [];
-      initialData.push({ lg: cardPosition });
-      localStorage.setItem('initialData', JSON.stringify(initialData));
-    }
-    else {
+    if (data) {
       const newData = JSON.parse(data);
       newData.push({ lg: cardPosition });
       localStorage.setItem('initialData', JSON.stringify(newData));
@@ -93,10 +102,11 @@ const DropDrag: FunctionComponent<Props> = (props) => {
       );
     });
   };
+
   const location = useLocation();
   const index = location.state.index;
 
-  const displayUI = (index:number) =>{
+  const displayUI = (index: number) => {
     const data = localStorage.getItem("initialData");
     console.log("Saved Data:", data);
     if (data) {

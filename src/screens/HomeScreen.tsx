@@ -9,11 +9,17 @@ const SelectionUI = () => {
     const returnIndexNo = (index: number) => {
         navigate(generatePath(APP_ROUTES.DRAGNDROP_PAGE), { state: { index: index } });
     }
-    const removeData =()=> {
-       localStorage.removeItem("initialData");
+    const removeData = () => {
+        localStorage.removeItem("initialData");
     }
 
-    const data: [] = JSON.parse(localStorage.getItem("initialData")!);
+     const data: [] = JSON.parse(localStorage.getItem("initialData")!);
+    if(data==null){
+        console.log("null data");
+        return(
+             <Button onClick={()=>{ navigate(generatePath(APP_ROUTES.DRAGNDROP_PAGE))}}>Move</Button>
+        )
+    }
 
     return (
         <>
@@ -24,10 +30,10 @@ const SelectionUI = () => {
                     display: 'flex',
                     flexWrap: "wrap",
                     justifyContent: "center",
-                    color:"black"
+                    color: "black"
                 }}>
                     {data.map((_currElement, index) =>
-                        (<UIBox key={index}> UI {index+1} <Button sx={{color:"black", background:"white", width:"auto"}} onClick={() => { returnIndexNo(index) }}>select me</Button></UIBox>)
+                        (<UIBox key={index}> UI {index + 1} <Button sx={{ color: "black", background: "white", width: "auto" }} onClick={() => { returnIndexNo(index) }}>select me</Button></UIBox>)
                     )}
                 </Box>
             </Box>
