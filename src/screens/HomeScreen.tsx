@@ -13,13 +13,21 @@ const SelectionUI = () => {
         localStorage.removeItem("initialData");
     }
 
-     const data: [] = JSON.parse(localStorage.getItem("initialData")!);
-    if(data==null){
-        console.log("null data");
-        return(
-             <Button onClick={()=>{ navigate(generatePath(APP_ROUTES.DRAGNDROP_PAGE))}}>Move</Button>
-        )
-    }
+    let data: [] = JSON.parse(localStorage.getItem("initialData")!);
+    if (data == null) {
+        const initialData = [{
+          lg: [
+            { x: 0, y: 0, w: 5, h: 1.7, i: "0" },
+            { x: 10, y: 0, w: 4, h: 2.3, i: "1" },
+            { x: 5, y: 0, w: 3, h: 2.3, i: "2" },
+            { x: 0, y: 1, w: 4, h: 2, i: "3" },
+            { x: 10, y: 1, w: 3, h: 3, i: "4" },
+          ]
+        }];
+        console.log("initial DAta:", initialData);
+        localStorage.setItem('initialData', JSON.stringify(initialData)); 
+        data = initialData as [];
+      }
 
     return (
         <>
