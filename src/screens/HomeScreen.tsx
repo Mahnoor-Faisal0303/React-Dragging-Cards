@@ -13,11 +13,11 @@ const SelectionUI = () => {
         localStorage.removeItem("initialData");
     }
 
-    const data: [] = JSON.parse(localStorage.getItem("initialData")!);
+     const data: [] = JSON.parse(localStorage.getItem("initialData")!);
     if(data==null){
-        console.log("nkkk")
+        console.log("null data");
         return(
-            <Button onClick={()=>{ navigate(generatePath(APP_ROUTES.DRAGNDROP_PAGE))}}>Move</Button>
+             <Button onClick={()=>{ navigate(generatePath(APP_ROUTES.DRAGNDROP_PAGE))}}>Move</Button>
         )
     }
 

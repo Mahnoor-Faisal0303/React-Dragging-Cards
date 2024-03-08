@@ -7,10 +7,19 @@ function App() {
   return (
     <Router>
       <Routes>
-      <Route path={APP_ROUTES.DRAGNDROP_PAGE} element={<DropDrag domElements={[]} />} />
-      <Route path={APP_ROUTES.HOME_PAGE} element={<SelectionUI/>} />
+        <Route path={APP_ROUTES.DRAGNDROP_PAGE} element={<DropDrag domElements={[]} />} />
+        <Route path={APP_ROUTES.HOME_PAGE} element={<SelectionUI />} />
       </Routes>
     </Router>
   );
 }
 export default App;
+// {/* <Routes>
+// const data = localStorage.getItem("initialData");
+// {data ? (
+//   <Route path={APP_ROUTES.DRAGNDROP_PAGE} element={<DropDrag domElements={[]} />} />
+// ) : (
+//   <Route path={APP_ROUTES.DRAGNDROP_PAGE} element={<SelectionUI />} />
+// )}
+// <Route path={APP_ROUTES.HOME_PAGE} element={<SelectionUI />} />
+// </Routes> */}
