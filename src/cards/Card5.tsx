@@ -1,10 +1,12 @@
 import { Box, Typography } from "@mui/material";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import _ from "lodash";
+//import {CardProps} from "../App.tsx"
 
-export const Card5Design = () => {
+export const Card5Design:React.FC = () => {
     return (
         <>
+        {/* <Button sx={{display:"flex",ml:"auto"}} className="cancel-drag" onClick={cardindex}>Save</Button> */}
             <Box sx={{ display: "flex" }}>
                 <Box>
                     <Typography sx={{ margin: 2, ml: 4, color: "black" }} variant="h6">Support Tickets</Typography>

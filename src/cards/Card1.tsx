@@ -5,7 +5,7 @@ import { Box, Typography } from "@mui/material";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import _ from "lodash";
 
-export const Card1Design = () => {
+export const Card1Design :React.FC = () => {
   return (
     <>
       <Typography
@@ -59,3 +59,5 @@ export const Card1Design = () => {
     </>
   );
 };
+
+
